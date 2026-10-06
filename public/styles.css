@@ -12,12 +12,23 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
 body {
   margin: 0;
   background:
     radial-gradient(circle at 75% 10%, #162c31 0, transparent 32%), var(--bg);
   color: var(--text);
   font-family: "Space Grotesk", sans-serif;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 .shell {
   max-width: 1250px;
