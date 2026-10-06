@@ -156,6 +156,12 @@ h1 span {
   gap: 8px;
   align-items: center;
 }
+.graph-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font: 11px "DM Mono", monospace;
+  line-height: 1.5;
+}
 .legend i {
   width: 8px;
   height: 8px;

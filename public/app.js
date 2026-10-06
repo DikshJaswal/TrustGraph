@@ -63,7 +63,7 @@ function renderGraph(data) {
   ["account", "device", "instrument", "merchant"].forEach((type) =>
     data.nodes
       .filter((n) => n.type === type)
-      .slice(0, type === "account" ? 12 : 6)
+      .slice(0, type === "account" ? 6 : 6)
       .forEach((n) => selected.push(n)),
   );
   const positions = {};
@@ -81,7 +81,7 @@ function renderGraph(data) {
   let svg = `<svg viewBox="0 0 ${w} ${h}">`;
   data.edges.forEach((e) => {
     if (positions[e.source] && positions[e.target])
-      svg += `<line x1="${positions[e.source].x}" y1="${positions[e.source].y}" x2="${positions[e.target].x}" y2="${positions[e.target].y}" stroke="#33404b" stroke-width="1"/>`;
+      svg += `<line x1="${positions[e.source].x}" y1="${positions[e.source].y}" x2="${positions[e.target].x}" y2="${positions[e.target].y}" stroke="#33404b" stroke-opacity="0.55" stroke-width="1"/>`;
   });
   selected.forEach((n) => {
     const p = positions[n.id],
@@ -91,7 +91,8 @@ function renderGraph(data) {
         instrument: "#a78bfa",
         merchant: "#ff6673",
       }[n.type];
-    svg += `<circle cx="${p.x}" cy="${p.y}" r="${n.type === "account" ? 5 : 8}" fill="${color}"/><text x="${p.x + 10}" y="${p.y + 3}">${n.label}</text>`;
+    const label = n.type === "account" ? "" : `<text x="${p.x + 10}" y="${p.y + 3}">${n.label}</text>`;
+    svg += `<circle cx="${p.x}" cy="${p.y}" r="${n.type === "account" ? 5 : 8}" fill="${color}"><title>${n.type}: ${n.label}</title></circle>${label}`;
   });
   el("graph").innerHTML = svg + "</svg>";
 }
