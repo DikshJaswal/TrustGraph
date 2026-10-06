@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+:root {
+  --bg: #0b0e13;
+  --panel: #121720;
+  --line: #252d38;
+  --text: #e8edf2;
+  --muted: #8995a3;
+  --cyan: #54e0d0;
+  --red: #ff6673;
+  --yellow: #f5c96a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 75% 10%, #162c31 0, transparent 32%), var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+}
+.shell {
+  max-width: 1250px;
+  margin: auto;
+  padding: 36px 42px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 27px;
+}
+.eyebrow,
+.panel-head span,
+footer {
+  font:
+    11px "DM Mono",
+    monospace;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+}
+h1 {
+  font-size: 36px;
+  letter-spacing: -2px;
+  margin: 8px 0 2px;
+}
+h1 span {
+  color: var(--cyan);
+}
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+.badge {
+  color: var(--cyan);
+  font: 11px "DM Mono";
+  letter-spacing: 1px;
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 0 32px;
+}
+.hero h2 {
+  font-size: 35px;
+  margin: 10px 0;
+}
+.hero p {
+  max-width: 625px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.score {
+  border: 1px solid #70404a;
+  background: #25171d;
+  border-radius: 100%;
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.score div {
+  font-size: 43px;
+  color: var(--red);
+  font-weight: 600;
+}
+.score small {
+  font: 10px "DM Mono";
+  color: var(--muted);
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.stat,
+.panel {
+  background: linear-gradient(145deg, #141b24, #10151c);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.stat {
+  padding: 19px;
+}
+.stat strong {
+  display: block;
+  font-size: 29px;
+}
+.stat label {
+  font: 11px "DM Mono";
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 20px;
+}
+.panel {
+  padding: 23px;
+}
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+}
+.panel h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.graph {
+  height: 365px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, #18232b 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.graph svg {
+  width: 100%;
+  height: 100%;
+}
+.graph text {
+  font: 9px "DM Mono";
+  fill: #bdc7d0;
+}
+.legend {
+  color: var(--muted);
+  font: 11px "DM Mono";
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+}
+.account {
+  background: var(--cyan);
+}
+.device {
+  background: var(--yellow);
+}
+.instrument {
+  background: #a78bfa;
+}
+.merchant {
+  background: var(--red);
+}
+.reasons {
+  min-height: 270px;
+  padding: 14px 0;
+}
+.reason {
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--line);
+  color: #c4ccd4;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.reason:before {
+  content: "↗";
+  color: var(--red);
+  margin-right: 12px;
+}
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  background: var(--cyan);
+  color: #071615;
+  font: 600 13px "Space Grotesk";
+  padding: 14px;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+}
+.attestation {
+  margin-top: 15px;
+  padding: 14px;
+  border: 1px solid #2a6560;
+  border-radius: 6px;
+  color: var(--cyan);
+  font: 11px "DM Mono";
+  line-height: 1.7;
+  word-break: break-all;
+}
+.hidden {
+  display: none;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 800px) {
+  .shell {
+    padding: 25px 18px;
+  }
+  .hero {
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .hero h2 {
+    font-size: 26px;
+  }
+  .score {
+    width: 110px;
+    height: 110px;
+  }
+  .score div {
+    font-size: 32px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer {
+    display: block;
+    line-height: 2;
+  }
+}

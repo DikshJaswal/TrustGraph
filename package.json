@@ -1,0 +1,7 @@
+{
+  "name": "trustgraph",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "start": "node server.js", "dev": "node server.js", "test": "node test.js", "chain:node": "hardhat node", "chain:compile": "hardhat compile", "chain:deploy": "hardhat run scripts/deploy.js --network localhost" },
+  "devDependencies": { "hardhat": "^2.22.0", "@nomicfoundation/hardhat-toolbox": "^5.0.0" }
+}

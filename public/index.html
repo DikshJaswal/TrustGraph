@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TrustGraph</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <div class="eyebrow">PRIVACY-FIRST FRAUD INTELLIGENCE</div>
+          <h1>Trust<span>Graph</span></h1>
+          <p class="subtitle">
+            Detect coordinated risk without storing identity.
+          </p>
+        </div>
+        <div class="badge">● SYSTEM ONLINE</div>
+      </header>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">SUSPICIOUS CLUSTER DETECTED</div>
+          <h2 id="clusterId">Loading...</h2>
+          <p>
+            Businesses contribute pseudonymized transaction signals. The graph
+            finds patterns; the chain records only a verifiable attestation.
+          </p>
+        </div>
+        <div class="score">
+          <div id="riskScore">--</div>
+          <small>GRAPH ANOMALY</small>
+        </div>
+      </section>
+      <section class="controls">
+        <div>
+          <div class="eyebrow">DATA INGESTION</div>
+          <strong>Analyze a business dataset</strong>
+          <p>
+            Upload JSON or CSV with account, device, instrument, merchant,
+            amount and behavior fields.
+          </p>
+        </div>
+        <div class="control-actions">
+          <input id="fileInput" type="file" accept=".json,.csv" /><button
+            id="upload"
+          >
+            Analyze uploaded data</button
+          ><button id="reset" class="secondary">Reset demo data</button>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+      <section class="stats" id="stats"></section>
+      <section class="grid">
+        <div class="panel graph-panel">
+          <div class="panel-head">
+            <h3>Trust graph</h3>
+            <span>IDENTITY TOKENS ONLY</span>
+          </div>
+          <div id="graph" class="graph"></div>
+          <div class="legend">
+            <i class="account"></i> accounts <i class="device"></i> devices
+            <i class="instrument"></i> instruments
+            <i class="merchant"></i> merchants
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Why this is risky</h3>
+            <span>MODEL EXPLANATION</span>
+          </div>
+          <div id="reasons" class="reasons"></div>
+          <button id="attest">Issue blockchain attestation →</button>
+          <div id="attestation" class="attestation hidden"></div>
+        </div>
+      </section>
+      <section class="panel table-panel">
+        <div class="panel-head">
+          <h3>Incoming signal preview</h3>
+          <span>RAW VALUES ARE NEVER DISPLAYED</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Account token</th>
+                <th>Device token</th>
+                <th>Merchant</th>
+                <th>Amount</th>
+                <th>Behavior</th>
+              </tr>
+            </thead>
+            <tbody id="transactions"></tbody>
+          </table>
+        </div>
+      </section>
+      <footer>
+        <span>TrustGraph MVP · demo data is pseudonymized with HMAC-SHA256</span
+        ><span>ON-CHAIN: HASH + SCORE + ISSUER</span>
+      </footer>
+    </main>
+    <script src="/public/app.js"></script>
+  </body>
+</html>
