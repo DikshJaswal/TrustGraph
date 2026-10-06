@@ -253,3 +253,145 @@ footer {
     line-height: 2;
   }
 }
+
+/* Responsive interaction and accessibility refinements */
+.controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #141b24, #10151c);
+}
+.controls p {
+  max-width: 580px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.control-actions {
+  display: grid;
+  gap: 10px;
+}
+.control-actions input {
+  width: 100%;
+  padding: 11px;
+  color: var(--text);
+  background: #0b0e13;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.control-actions button,
+.panel button {
+  min-height: 42px;
+}
+.secondary {
+  color: var(--text);
+  background: #202936;
+  border: 1px solid #354252;
+}
+.status {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  color: var(--yellow);
+  font: 11px "DM Mono", monospace;
+}
+.signal-stat {
+  border-color: #315450;
+  background: linear-gradient(145deg, #142522, #101a1a);
+}
+.table-panel {
+  margin-top: 20px;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  color: #c4ccd4;
+  font-size: 13px;
+}
+th,
+td {
+  padding: 13px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  color: var(--muted);
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.risk-pill {
+  padding: 4px 7px;
+  color: var(--yellow);
+  background: #2c2618;
+  border-radius: 12px;
+  font: 11px "DM Mono", monospace;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+@media (max-width: 800px) {
+  .shell {
+    padding: 24px 14px;
+  }
+  header,
+  .hero {
+    flex-direction: column;
+  }
+  header {
+    gap: 18px;
+  }
+  .hero {
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 0 24px;
+  }
+  .hero h2 {
+    font-size: clamp(24px, 8vw, 32px);
+    overflow-wrap: anywhere;
+  }
+  .score {
+    align-self: center;
+  }
+  .controls,
+  .privacy-card {
+    grid-template-columns: 1fr !important;
+  }
+  .privacy-card {
+    gap: 14px !important;
+  }
+  .panel {
+    padding: 17px;
+  }
+  .panel-head {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .panel-head span {
+    text-align: right;
+    font-size: 9px;
+  }
+  .graph {
+    height: 300px;
+  }
+  .legend {
+    flex-wrap: wrap;
+    line-height: 1.8;
+  }
+}
